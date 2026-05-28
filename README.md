@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohammad Muntasir Kabir — Personal Portfolio
 
-## Getting Started
+A modern, animated personal portfolio built with **Next.js 16**, **React 19**, **Tailwind CSS 4**, and **GSAP**. Features smooth scroll-triggered animations, a typewriter effect, glassmorphism UI, and a fully responsive dark theme.
 
-First, run the development server:
+## ✨ Highlights
+
+- **Typewriter Hero** — Animated cycling text with gradient effect and blinking cursor
+- **GSAP Scroll Animations** — Cards, timelines, and sections animate on scroll with stagger, scale, and slide effects
+- **Glassmorphism UI** — Frosted glass cards with subtle borders and backdrop blur
+- **Animated Timeline** — Experience & Education sections with growing timeline lines and elastic dot pop-ins
+- **Skills Marquee** — Infinite horizontal scroll of technologies with edge fades
+- **3D Project Cards** — Hover tilt, letter scale, and backdrop-blur overlay links
+- **Custom Scroll Progress** — Gradient progress bar tracked to scroll position
+- **Animated Timeline** — Experience & Education sections with growing timeline lines and elastic dot pop-ins
+- **Skills Marquee** — Infinite horizontal scroll of technologies with edge fades
+- **3D Project Cards** — Hover tilt, letter scale, and backdrop-blur overlay links
+- **Custom Scroll Progress** — Gradient progress bar tracked to scroll position
+- **Contact Form** — Animated focus underlines, loading spinner, success/error pop-in animations
+- **Responsive Design** — Fully responsive with mobile hamburger menu and smooth transitions
+- **Dark Theme** — Teal (#20B2A6) and amber (#F5A623) accent colors on deep dark background
+
+## 🛠 Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| Framework | Next.js 16, React 19 |
+| Styling | Tailwind CSS 4, CSS Animations |
+| Animation | GSAP 3 (ScrollTrigger, ScrollTo) |
+| Icons | Lucide React |
+| Fonts | Geist Sans, Geist Mono, Playfair Display |
+| Language | TypeScript 5 |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone git@github.com:MohammadMuntasirKabir/nextjs-personal-portfolio.git
+cd nextjs-personal-portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with Turbopack |
+| `npm run Build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── globals.css      # Global styles + animations
+│   ├── layout.tsx       # Root layout + ScrollProgress
+│   └── page.tsx         # Home page composition
+├── components/
+│   ├── AnimatedBorderButton.tsx  # Button with animated SVG border
+│   ├── Button.tsx                # Primary button component
+│   ├── ScrollProgress.tsx        # Scroll progress bar (GSAP)
+│   └── SkillsMarquee.tsx         # Infinite skills scroller
+├── layout/
+│   ├── Footer.tsx       # Animated footer with social links
+│   └── Navbar.tsx       # Navbar with hamburger + animations
+├── lib/
+│   ├── social-links.tsx  # Social media links + footer links
+│   └── useGsap.ts        # GSAP utility exports
+└── sections/
+    ├── Hero.tsx          # Typewriter + particles + skills cards
+    ├── About.tsx         # Stats + highlight cards + tilt hover
+    ├── Projects.tsx      # Project grid with 3D hover
+    ├── Experience.tsx    # Animated timeline
+    ├── Education.tsx     # Animated timeline
+    └── Contact.tsx       # Animated form + contact info
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Sections
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Hero** — Full-screen landing with typewriter headline, floating particles, CTA buttons, social links, and skills/AI tools cards
+2. **Skills Marquee** — Auto-scrolling list of all technologies
+3. **About** — Bio, philosophy quote, stats counters, and 4 highlight cards with icons
+4. **Projects** — 4 featured projects with hover overlays, tags, and external links
+5. **Experience** — Timeline with work history, role details, and tech tags
+6. **Education** — Timeline with degree, coursework highlights
+7. **Contact** — Form with animated inputs, availability card, contact info
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is private and intended for personal portfolio use.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Built by [Mohammad Muntasir Kabir](https://github.com/MohammadMuntasirKabir)
