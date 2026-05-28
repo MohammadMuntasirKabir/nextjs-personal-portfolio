@@ -2,6 +2,11 @@
 
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -29,6 +34,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
     link: "#",
     github: "#",
+    accent: "from-primary/20 via-primary/5 to-transparent",
+    letter: "G",
   },
   {
     title: "HRMS System",
@@ -37,6 +44,8 @@ const projects = [
     tags: ["Laravel", "Livewire", "Flux UI", "SQLite"],
     link: "#",
     github: "#",
+    accent: "from-highlight/20 via-highlight/5 to-transparent",
+    letter: "H",
   },
   {
     title: "AI Agent Playground",
@@ -45,6 +54,8 @@ const projects = [
     tags: ["Python", "TypeScript", "LLMs", "MCP"],
     link: "#",
     github: "#",
+    accent: "from-purple-500/20 via-purple-500/5 to-transparent",
+    letter: "A",
   },
   {
     title: "Personal Portfolio",
@@ -53,12 +64,59 @@ const projects = [
     tags: ["Next.js", "React 19", "Tailwind CSS 4", "TypeScript"],
     link: "#",
     github: "#",
+    accent: "from-pink-500/20 via-pink-500/5 to-transparent",
+    letter: "P",
   },
 ];
 
 export const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (gridRef.current) {
+        const cards = Array.from(gridRef.current.children);
+        cards.forEach((card, i) => {
+          gsap.from(card, {
+            opacity: 0,
+            y: 60,
+            scale: 0.95,
+            duration: 0.7,
+            delay: i * 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          });
+
+          // Hover animations
+          const el = card as HTMLElement;
+          el.addEventListener("mouseenter", () => {
+            gsap.to(el, { y: -10, scale: 1.02, duration: 0.4, ease: "power2.out" });
+            const overlay = el.querySelector(".project-overlay");
+            if (overlay) gsap.to(overlay, { opacity: 1, duration: 0.3 });
+            const letter = el.querySelector(".project-letter");
+            if (letter) gsap.to(letter, { scale: 1.4, duration: 0.4, ease: "back.out(2)" });
+          });
+          el.addEventListener("mouseleave", () => {
+            gsap.to(el, { y: 0, scale: 1, duration: 0.4, ease: "power2.out" });
+            const overlay = el.querySelector(".project-overlay");
+            if (overlay) gsap.to(overlay, { opacity: 0, duration: 0.3 });
+            const letter = el.querySelector(".project-letter");
+            if (letter) gsap.to(letter, { scale: 1, duration: 0.4, ease: "back.out(2)" });
+          });
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" ref={sectionRef} className="py-32 relative overflow-hidden">
       {/* Bg glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -66,7 +124,7 @@ export const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="text-sm font-medium tracking-wider uppercase text-secondary-foreground animate-fade-in">
             Featured Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
@@ -75,37 +133,40 @@ export const Projects = () => {
               solve real problems.
             </span>
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+          <p className="text-muted-foreground animate-fade-in animation-delay-200 max-w-2xl mx-auto">
             A selection of projects I&apos;ve built — from production HRMS
             platforms to experimental AI agent systems.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div ref={gridRef} className="grid md:grid-cols-2 gap-6">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/30 transition-all duration-500 relative"
             >
-              {/* Image placeholder */}
-              <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-primary/10 via-surface to-primary/5">
+              {/* Image placeholder with animated gradient */}
+              <div className={`relative overflow-hidden aspect-video bg-gradient-to-br ${project.accent}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-surface to-primary/5">
+                  {/* Grid pattern */}
+                  <div className="absolute inset-0 opacity-10" style={{
+                    backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                  }} />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
-                    {project.title.charAt(0)}
+                  <span className="project-letter text-5xl font-bold text-primary/15 group-hover:text-primary/30 transition-all duration-500">
+                    {project.letter}
                   </span>
                 </div>
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+
                 {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="project-overlay absolute inset-0 flex items-center justify-center gap-4 opacity-0 bg-black/40 backdrop-blur-sm transition-all duration-300">
                   <a
                     href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="p-3 rounded-xl glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -113,36 +174,36 @@ export const Projects = () => {
                   </a>
                   <a
                     href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="p-3 rounded-xl glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <GithubIcon className="w-5 h-5" />
                   </a>
                 </div>
+
+                {/* Project number badge */}
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-xs font-mono text-muted-foreground">
+                  0{idx + 1}
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 mt-1" />
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tags.map((tag) => (
                     <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-surface/80 text-xs font-medium border border-border/40 text-muted-foreground hover:border-primary/40 hover:text-primary transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -154,7 +215,7 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        <div className="text-center mt-14 animate-fade-in animation-delay-600">
           <AnimatedBorderButton>
             View All Projects
             <ArrowUpRight className="w-5 h-5" />

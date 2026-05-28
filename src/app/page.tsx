@@ -1,5 +1,6 @@
 import { Navbar } from "@/layout/Navbar";
 import { Hero } from "@/sections/Hero";
+import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <SkillsMarquee />
         <About />
         <Projects />
         <Experience />
