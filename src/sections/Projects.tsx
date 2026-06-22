@@ -5,6 +5,7 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,44 +29,48 @@ function GithubIcon({ className }: { className?: string }) {
 
 const projects = [
   {
-    title: "GymAI Dhaka",
+    title: "AI Travel Planner",
     description:
-      "A gym partnership platform in Bangladesh connecting fitness enthusiasts with local gyms. Features gym discovery, membership management, and partner dashboards.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    link: "#",
-    github: "#",
+      "An AI-powered travel planning app built with Next.js 16, React 19, and Prisma. Features AI-generated itineraries, location suggestions, drag-and-drop trip organization, and an interactive globe view.",
+    tags: ["Next.js 16", "React 19", "Prisma", "NextAuth", "OpenRouter AI"],
+    link: "https://github.com/MohammadMuntasirKabir/ai-travel-planner",
+    github: "https://github.com/MohammadMuntasirKabir/ai-travel-planner",
+    image: "/travel-planner-hero.png",
     accent: "from-primary/20 via-primary/5 to-transparent",
-    letter: "G",
+    letter: "T",
   },
   {
     title: "HRMS System",
     description:
-      "A comprehensive Human Resource Management System with employee management, recruitment workflows, payroll, and multi-role access control for 6 user roles.",
-    tags: ["Laravel", "Livewire", "Flux UI", "SQLite"],
-    link: "#",
-    github: "#",
+      "A comprehensive Human Resource Management System built with Laravel 13, Livewire, and Flux UI. Features employee management, recruitment workflows, payroll, and multi-role access control for 6 user roles.",
+    tags: ["Laravel 13", "Livewire", "Flux UI", "SQLite"],
+    link: "https://github.com/MohammadMuntasirKabir/hrms-system",
+    github: "https://github.com/MohammadMuntasirKabir/hrms-system",
+    image: "/hrms-hero.png",
     accent: "from-highlight/20 via-highlight/5 to-transparent",
     letter: "H",
   },
   {
-    title: "AI Agent Playground",
+    title: "Event Planner Pro",
     description:
-      "An experimental platform for building and testing autonomous AI agents. Exploring multi-agent orchestration, tool use, and reasoning patterns.",
-    tags: ["Python", "TypeScript", "LLMs", "MCP"],
-    link: "#",
-    github: "#",
+      "A full-stack event management platform built with Next.js 16 and Clerk authentication. Features event creation, attendee management, real-time updates, and a polished dashboard with Prisma and Neon DB.",
+    tags: ["Next.js 16", "Clerk", "Prisma", "Neon DB"],
+    link: "https://github.com/MohammadMuntasirKabir/event-planner-pro",
+    github: "https://github.com/MohammadMuntasirKabir/event-planner-pro",
+    image: "/event-planner-hero.png",
     accent: "from-purple-500/20 via-purple-500/5 to-transparent",
-    letter: "A",
+    letter: "E",
   },
   {
-    title: "Personal Portfolio",
+    title: "GymAI Dhaka",
     description:
-      "This very portfolio — built with Next.js 16, React 19, and Tailwind CSS 4. Features glass morphism, animated borders, and a dark teal theme.",
-    tags: ["Next.js", "React 19", "Tailwind CSS 4", "TypeScript"],
-    link: "#",
-    github: "#",
-    accent: "from-pink-500/20 via-pink-500/5 to-transparent",
-    letter: "P",
+      "A gym partnership platform in Bangladesh connecting fitness enthusiasts with local gyms. Features gym discovery, membership management, and partner dashboards. Built with Vite, React, and Neon DB.",
+    tags: ["Vite", "React 19", "Tailwind CSS", "Neon DB"],
+    link: "https://github.com/MohammadMuntasirKabir/gymai-dhaka",
+    github: "https://github.com/MohammadMuntasirKabir/gymai-dhaka",
+    image: "/gymai-hero.png",
+    accent: "from-emerald-500/20 via-emerald-500/5 to-transparent",
+    letter: "G",
   },
 ];
 
@@ -100,6 +105,8 @@ export const Projects = () => {
             if (overlay) gsap.to(overlay, { opacity: 1, duration: 0.3 });
             const letter = el.querySelector(".project-letter");
             if (letter) gsap.to(letter, { scale: 1.4, duration: 0.4, ease: "back.out(2)" });
+            const img = el.querySelector(".project-image") as HTMLElement;
+            if (img) gsap.to(img, { scale: 1.08, duration: 0.6, ease: "power2.out" });
           });
           el.addEventListener("mouseleave", () => {
             gsap.to(el, { y: 0, scale: 1, duration: 0.4, ease: "power2.out" });
@@ -107,6 +114,8 @@ export const Projects = () => {
             if (overlay) gsap.to(overlay, { opacity: 0, duration: 0.3 });
             const letter = el.querySelector(".project-letter");
             if (letter) gsap.to(letter, { scale: 1, duration: 0.4, ease: "back.out(2)" });
+            const img = el.querySelector(".project-image") as HTMLElement;
+            if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" });
           });
         });
       }
@@ -135,7 +144,7 @@ export const Projects = () => {
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200 max-w-2xl mx-auto">
             A selection of projects I&apos;ve built — from production HRMS
-            platforms to experimental AI agent systems.
+            platforms to AI-powered travel planners.
           </p>
         </div>
 
@@ -146,21 +155,16 @@ export const Projects = () => {
               key={idx}
               className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/30 transition-all duration-500 relative"
             >
-              {/* Image placeholder with animated gradient */}
-              <div className={`relative overflow-hidden aspect-video bg-gradient-to-br ${project.accent}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-surface to-primary/5">
-                  {/* Grid pattern */}
-                  <div className="absolute inset-0 opacity-10" style={{
-                    backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }} />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="project-letter text-5xl font-bold text-primary/15 group-hover:text-primary/30 transition-all duration-500">
-                    {project.letter}
-                  </span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+              {/* Project Image */}
+              <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-surface to-card">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  fill
+                  className="project-image object-cover transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
 
                 {/* Overlay Links */}
                 <div className="project-overlay absolute inset-0 flex items-center justify-center gap-4 opacity-0 bg-black/40 backdrop-blur-sm transition-all duration-300">
