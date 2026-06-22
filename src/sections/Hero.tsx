@@ -174,13 +174,17 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg" className="group">
-                Contact Me <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <Button size="lg" className="group" asChild>
+                <a href="#contact">
+                  Contact Me <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              <a href="/Mohammad_Muntasir_Kabir_Resume.pdf" download="Mohammad_Muntasir_Kabir_Resume.pdf">
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </a>
             </div>
 
             {/* Social Links */}
