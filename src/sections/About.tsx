@@ -35,8 +35,8 @@ const highlights = [
 ];
 
 const stats = [
-  { value: "1+", label: "Years Experience" },
-  { value: "4+", label: "Major Projects" },
+  { value: "0.5+", label: "Years Experience" },
+  { value: "3+", label: "Major Projects" },
   { value: "7+", label: "AI Tools Used" },
   { value: "20+", label: "Technologies" },
 ];

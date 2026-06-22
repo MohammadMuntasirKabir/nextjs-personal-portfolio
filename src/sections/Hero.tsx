@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/Button";
 import {
   ArrowRight,
   Download,
@@ -174,11 +173,14 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg" className="group" asChild>
-                <a href="#contact">
+              <a
+                href="#contact"
+                className="group relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 px-8 py-4 text-lg inline-flex items-center"
+              >
+                <span className="relative flex items-center justify-center gap-2">
                   Contact Me <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </Button>
+                </span>
+              </a>
               <a href="/Mohammad_Muntasir_Kabir_Resume.pdf" download="Mohammad_Muntasir_Kabir_Resume.pdf">
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5" />
@@ -272,7 +274,7 @@ export const Hero = () => {
                 <span className="text-sm font-medium">Available for work</span>
               </div>
               <div className="glass rounded-xl px-4 py-3 animate-float animation-delay-500 flex items-center gap-3 flex-1 justify-center group hover:border-primary/30 transition-all duration-300">
-                <div className="text-2xl font-bold text-primary">1+</div>
+                <div className="text-2xl font-bold text-primary">0.5+</div>
                 <div className="text-xs text-muted-foreground">Year Exp.</div>
               </div>
             </div>

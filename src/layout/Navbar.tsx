@@ -41,10 +41,10 @@ export const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <a
                 href={link.href}
-                key={index}
+                key={link.href}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full transition-all duration-300 relative group"
               >
                 {link.label}
@@ -58,6 +58,9 @@ export const Navbar = () => {
         <button
           className="md:hidden p-2 text-foreground cursor-pointer relative group"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           <div className="relative w-6 h-5 flex flex-col justify-between">
             <span className={`block h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -69,6 +72,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
         className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${
           isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}

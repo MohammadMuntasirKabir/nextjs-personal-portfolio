@@ -49,7 +49,7 @@
   }
 
   .font-serif {
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-playfair), "Playfair Display", serif;
   }
 
   ::selection {
@@ -333,7 +333,16 @@
     animation: shimmer 3s linear infinite;
   }
 
-  /* Noise texture overlay */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
   .noise::before {
     content: "";
     position: absolute;
