@@ -21,12 +21,13 @@ A modern, animated personal portfolio built with **Next.js 16**, **React 19**, *
 
 | Category | Technologies |
 |----------|-------------|
-| Framework | Next.js 16, React 19 |
-| Styling | Tailwind CSS 4, CSS Animations |
-| Animation | GSAP 3 (ScrollTrigger) |
-| Icons | Lucide React |
-| Fonts | Geist Sans, Geist Mono, Playfair Display |
-| Language | TypeScript 6 |
+|| Framework | Next.js 16, React 19 |
+|| Styling | Tailwind CSS 4, CSS Animations |
+|| Animation | GSAP 3 (ScrollTrigger) |
+|| Icons | Lucide React |
+|| Fonts | Geist Sans, Geist Mono, Playfair Display |
+|| Language | TypeScript 6 |
+|| Node Types | @types/node 26 |
 
 ## 🚀 Getting Started
 
