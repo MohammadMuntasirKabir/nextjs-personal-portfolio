@@ -104,6 +104,9 @@ def build():
           href="https://github.com/MohammadMuntasirKabir"),
         P("LinkedIn: mohammad-muntasir-kabir", size=8, leading=10.5, color=LINK_CLR, align=1,
           href="https://www.linkedin.com/in/mohammad-muntasir-kabir-642020381"),
+        Spacer(1, 3),
+        P("Portfolio: nextjs-personal-portfolio-zeta.vercel.app", size=8, leading=10.5, color=LINK_CLR, align=1,
+          href="https://nextjs-personal-portfolio-zeta.vercel.app"),
         Spacer(1, 5),
     ]
 
