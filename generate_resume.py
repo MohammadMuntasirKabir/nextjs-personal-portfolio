@@ -128,7 +128,7 @@ def build():
     left_all += [
         P("B.Sc. in Computer Science", size=9, leading=12, bold=True),
         P("Brac University", size=8.5, leading=11.5, color=MID),
-        P("Jan 2021 – Jun 2026", size=8.5, leading=11.5, color=MID),
+        P("Jan 2021 – Jun 2026  |  CGPA: 3.09", size=8.5, leading=11.5, color=MID),
         Spacer(1, 3),
         P("Relevant Coursework:", size=8.5, leading=11.5, bold=True),
     ]
@@ -226,6 +226,7 @@ def build():
             "name": "AI Travel Planner",
             "date": "Feb – Apr 2026",
             "url": "https://github.com/MohammadMuntasirKabir/ai-travel-planner",
+            "demo": "https://ai-travel-planner-azure-chi.vercel.app",
             "stack": "Next.js 16, React 19, Prisma, NextAuth 5, OpenRouter AI, @dnd-kit, react-globe.gl",
             "desc": "AI-powered travel planning with AI-generated itineraries, location suggestions, "
                     "drag-and-drop trip organization, interactive globe view, and AI chat. "
@@ -235,6 +236,7 @@ def build():
             "name": "HRMS System",
             "date": "Oct – Dec 2025",
             "url": "https://github.com/MohammadMuntasirKabir/hrms-system",
+            "demo": "https://hrms-system-ogg4.onrender.com",
             "stack": "Laravel 13, Livewire 4, Flux UI, Spatie Permission, SQLite",
             "desc": "Human Resource Management System: employee management, recruitment workflows, "
                     "payroll, 6-role access control, audit logging, dashboard analytics, API resources. "
@@ -244,6 +246,7 @@ def build():
             "name": "Event Planner Pro",
             "date": "Dec 2025 – Feb 2026",
             "url": "https://github.com/MohammadMuntasirKabir/event-planner-pro",
+            "demo": "https://event-planner-pro-lac.vercel.app",
             "stack": "Next.js 16, Clerk, Prisma, Neon DB, Tailwind CSS",
             "desc": "Full-stack event management platform with event creation, attendee management, "
                     "RSVP tracking, invite links, and polished dashboard. Rate limiting, input "
@@ -253,6 +256,7 @@ def build():
             "name": "GymAI Dhaka",
             "date": "Jan – Mar 2026",
             "url": "https://github.com/MohammadMuntasirKabir/gymai-dhaka",
+            "demo": "https://gym-ai-dhaka.vercel.app",
             "stack": "Vite, React 19, React Router, Neon DB, Tailwind CSS",
             "desc": "Gym partnership platform in Bangladesh. AI-generated personalized training plans, "
                     "gym discovery, membership management, partner dashboards. Retry logic for AI API, "
@@ -275,8 +279,9 @@ def build():
         right_all.append(P(proj["stack"], size=8, leading=11, italic=True, color=MID))
         # Line 3: Description
         right_all.append(P(proj["desc"], size=8.5, leading=11.5, color=BODY))
-        # Line 4: GitHub link
+        # Line 4: GitHub link + Live Demo
         right_all.append(P(f"GitHub: {proj['url']}", size=8, leading=11, color=LINK_CLR, href=proj["url"]))
+        right_all.append(P(f"Live Demo: {proj['demo']}", size=8, leading=11, color=LINK_CLR, href=proj["demo"]))
 
     # ═══════════════════════════════════════════════════════════════
     # BALANCE COLUMNS — fill remaining space

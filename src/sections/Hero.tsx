@@ -7,7 +7,7 @@ import {
   Code2,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { socialLinks } from "@/lib/social-links";
+import { socialLinks } from "@/lib/social-data";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 

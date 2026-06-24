@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks, footerLinks } from "@/lib/social-links";
+import { socialLinks, footerLinks } from "@/lib/social-data";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

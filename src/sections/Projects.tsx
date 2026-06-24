@@ -16,7 +16,7 @@ const projects = [
     description:
       "An AI-powered travel planning app built with Next.js 16, React 19, and Prisma. Features AI-generated itineraries, location suggestions, drag-and-drop trip organization, and an interactive globe view.",
     tags: ["Next.js 16", "React 19", "Prisma", "NextAuth", "OpenRouter AI"],
-    link: "https://github.com/MohammadMuntasirKabir/ai-travel-planner",
+    link: "https://ai-travel-planner-azure-chi.vercel.app",
     github: "https://github.com/MohammadMuntasirKabir/ai-travel-planner",
     image: "/travel-planner-hero.png",
     accent: "from-primary/20 via-primary/5 to-transparent",
@@ -27,7 +27,7 @@ const projects = [
     description:
       "A comprehensive Human Resource Management System built with Laravel 13, Livewire, and Flux UI. Features employee management, recruitment workflows, payroll, and multi-role access control for 6 user roles.",
     tags: ["Laravel 13", "Livewire", "Flux UI", "SQLite"],
-    link: "https://github.com/MohammadMuntasirKabir/hrms-system",
+    link: "https://hrms-system-ogg4.onrender.com",
     github: "https://github.com/MohammadMuntasirKabir/hrms-system",
     image: "/hrms-hero.png",
     accent: "from-highlight/20 via-highlight/5 to-transparent",
@@ -38,7 +38,7 @@ const projects = [
     description:
       "A full-stack event management platform built with Next.js 16 and Clerk authentication. Features event creation, attendee management, real-time updates, and a polished dashboard with Prisma and Neon DB.",
     tags: ["Next.js 16", "Clerk", "Prisma", "Neon DB"],
-    link: "https://github.com/MohammadMuntasirKabir/event-planner-pro",
+    link: "https://event-planner-pro-lac.vercel.app",
     github: "https://github.com/MohammadMuntasirKabir/event-planner-pro",
     image: "/event-planner-hero.png",
     accent: "from-purple-500/20 via-purple-500/5 to-transparent",
@@ -49,7 +49,7 @@ const projects = [
     description:
       "A gym partnership platform in Bangladesh connecting fitness enthusiasts with local gyms. Features gym discovery, membership management, and partner dashboards. Built with Vite, React, and Neon DB.",
     tags: ["Vite", "React 19", "Tailwind CSS", "Neon DB"],
-    link: "https://github.com/MohammadMuntasirKabir/gymai-dhaka",
+    link: "https://gym-ai-dhaka.vercel.app",
     github: "https://github.com/MohammadMuntasirKabir/gymai-dhaka",
     image: "/gymai-hero.png",
     accent: "from-emerald-500/20 via-emerald-500/5 to-transparent",
@@ -156,6 +156,7 @@ export const Projects = () => {
                     className="p-3 rounded-xl glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Live demo of ${project.title}`}
                   >
                     <ExternalLink className="w-5 h-5" />
                   </a>
@@ -164,6 +165,7 @@ export const Projects = () => {
                     className="p-3 rounded-xl glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`GitHub repo of ${project.title}`}
                   >
                     <GithubIcon className="w-5 h-5" />
                   </a>
