@@ -198,6 +198,26 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <div className="flex items-center justify-between pt-3">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    <GithubIcon className="w-4 h-4" />
+                    GitHub Repo
+                  </a>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                </div>
               </div>
             </div>
           ))}
