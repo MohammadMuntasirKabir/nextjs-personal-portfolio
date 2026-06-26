@@ -4,6 +4,7 @@ A modern, animated personal portfolio built with **Next.js 16**, **React 19**, *
 
 ## ✨ Highlights
 
+- **Resume Download** — One-click resume PDF download directly from the hero section
 - **Typewriter Hero** — Animated cycling text with gradient effect and blinking cursor
 - **GSAP Scroll Animations** — Cards, timelines, and sections animate on scroll with stagger, scale, and slide effects
 - **Glassmorphism UI** — Frosted glass cards with subtle borders and backdrop blur
