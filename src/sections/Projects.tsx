@@ -179,11 +179,11 @@ export const Projects = () => {
 
               {/* Content */}
               <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
+                <div className="flex items-center gap-2">
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 mt-1" />
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
@@ -198,7 +198,7 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-3">
+                <div className="flex items-center gap-4 pt-3">
                   <a
                     href={project.github}
                     target="_blank"
