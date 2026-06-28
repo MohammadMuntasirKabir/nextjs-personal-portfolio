@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const education = [
   {
-    period: "2022 — Jun 2026",
+    period: "Jan 2021 — Jun 2026",
     degree: "Bachelor of Science in Computer Science",
     institution: "Brac University",
     description:
