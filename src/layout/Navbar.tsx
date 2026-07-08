@@ -35,7 +35,7 @@ export const Navbar = () => {
           className="text-xl font-bold tracking-tight hover:text-primary transition-colors duration-300 relative group"
         >
           MM<span className="text-primary">.</span>K
-          <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-300" />
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
         </a>
 
         {/* Desktop Nav */}
@@ -48,7 +48,7 @@ export const Navbar = () => {
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full transition-all duration-300 relative group"
               >
                 {link.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary group-hover:w-3/4 transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-3/4 transition-all duration-300 rounded-full" />
               </a>
             ))}
           </div>

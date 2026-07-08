@@ -200,7 +200,7 @@ export const About = () => {
                 className="glass p-6 rounded-2xl border border-border/30 hover:border-primary/30 transition-all duration-500 cursor-default group relative overflow-hidden"
               >
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className={`card-icon-box w-12 h-12 rounded-xl ${item.color === "highlight" ? "bg-highlight/10" : "bg-primary/10"} flex items-center justify-center mb-4 transition-all duration-300`}>
                   <item.icon className={`w-6 h-6 ${item.color === "highlight" ? "text-highlight" : "text-primary"}`} />

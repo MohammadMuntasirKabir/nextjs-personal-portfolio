@@ -107,8 +107,8 @@ export const Hero = () => {
     >
       {/* Animated mesh gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-background to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
         {/* Animated orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-highlight/3 rounded-full blur-3xl animate-float animation-delay-200" />
@@ -153,13 +153,13 @@ export const Hero = () => {
                 Building{" "}
                 <span className="text-gradient inline-block">
                   {displayText}
-                  <span className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 animate-pulse align-middle" />
+                  <span className="inline-block w-0.75 h-[0.9em] bg-primary ml-1 animate-pulse align-middle" />
                 </span>
                 <br />
                 with{" "}
                 <span className="font-serif italic font-normal text-white relative">
                   purpose
-                  <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary to-highlight rounded-full" />
+                  <span className="absolute -bottom-1 left-0 w-full h-0.75 bg-linear-to-r from-primary to-highlight rounded-full" />
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200 leading-relaxed">

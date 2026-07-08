@@ -117,7 +117,7 @@ export const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 group-focus-within/input:shadow-lg group-focus-within/input:shadow-primary/5"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
               </div>
 
               {/* Email */}
@@ -134,7 +134,7 @@ export const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 group-focus-within/input:shadow-lg group-focus-within/input:shadow-primary/5"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
               </div>
 
               {/* Message */}
@@ -151,7 +151,7 @@ export const Contact = () => {
                   placeholder="Your message..."
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none group-focus-within/input:shadow-lg group-focus-within/input:shadow-primary/5"
                 />
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full group-focus-within/input:w-full transition-all duration-500" />
               </div>
 
               {/* Submit */}
@@ -179,9 +179,9 @@ export const Contact = () => {
                   }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="w-5 h-5 shrink-0" />
                   )}
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>

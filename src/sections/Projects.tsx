@@ -139,7 +139,7 @@ export const Projects = () => {
               className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/30 transition-all duration-500 relative"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-surface to-card">
+              <div className="relative overflow-hidden aspect-video bg-linear-to-br from-surface to-card">
                 <Image
                   src={project.image}
                   alt={`${project.title} screenshot`}
@@ -147,7 +147,7 @@ export const Projects = () => {
                   className="project-image object-cover transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-card via-card/40 to-transparent" />
 
                 {/* Overlay Links */}
                 <div className="project-overlay absolute inset-0 flex items-center justify-center gap-4 opacity-0 bg-black/40 backdrop-blur-sm transition-all duration-300">

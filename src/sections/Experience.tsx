@@ -115,7 +115,7 @@ export const Experience = () => {
           {/* Animated timeline line */}
           <div
             ref={lineRef}
-            className="timeline-glow absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 origin-top"
+            className="timeline-glow absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 origin-top"
           />
 
           {experiences.map((exp, idx) => (
