@@ -19,7 +19,7 @@ const education = [
       "Algorithms & Data Structures",
       "Database Systems",
       "Artificial Intelligence",
-      "Web Technologies",
+      "Compiler Design",
       "Operating Systems",
     ],
   },
