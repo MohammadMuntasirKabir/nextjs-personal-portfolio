@@ -11,6 +11,7 @@ A modern, animated personal portfolio built with **Next.js 16**, **React 19**, *
 - **Animated Timeline** — Experience & Education sections with growing timeline lines and elastic dot pop-ins
 - **Skills Marquee** — Infinite horizontal scroll of technologies with edge fades
 - **Project Cards** — 4 featured projects with screenshots, hover overlays, tags, and GitHub links
+- **Live Links** — Cards link to live demos (Vercel + https://hrms-system-dun.vercel.app)
 - **Custom Scroll Progress** — Gradient progress bar tracked to scroll position
 - **Contact Form** — Animated focus underlines, loading spinner, success/error animations
 - **Responsive Design** — Fully responsive with mobile hamburger menu and smooth transitions

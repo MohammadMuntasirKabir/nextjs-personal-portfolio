@@ -27,7 +27,7 @@ const projects = [
     description:
       "A comprehensive Human Resource Management System built with Laravel 13, Livewire, and Flux UI. Features employee management, recruitment workflows, payroll, and multi-role access control for 6 user roles.",
     tags: ["Laravel 13", "Livewire", "Flux UI", "SQLite"],
-    link: "https://hrms-system-ogg4.onrender.com",
+    link: "https://hrms-system-dun.vercel.app",
     github: "https://github.com/MohammadMuntasirKabir/hrms-system",
     image: "/hrms-hero.png",
     accent: "from-highlight/20 via-highlight/5 to-transparent",
