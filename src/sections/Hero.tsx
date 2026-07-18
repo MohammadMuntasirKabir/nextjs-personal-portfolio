@@ -22,7 +22,7 @@ const particles = Array.from({ length: 40 }, (_, i) => ({
 }));
 
 const aiAutomation = [
-  "Claude Code", "Codex", "OpenCode", "Zapier", "n8n", "OpenClaw", "Hermes Agent",
+  "Claude Code", "Codex", "OpenCode", "Lovable", "Kilo Code", "Zapier", "n8n", "OpenClaw", "Hermes Agent",
 ];
 
 const techStack = [
@@ -30,7 +30,8 @@ const techStack = [
   "React", "Next.js", "Tailwind CSS", "Laravel", "Livewire",
   "Vue.js", "PHP", "MySQL", "SQLite", "PostgreSQL",
   "Node.js", "Express", "MongoDB", "Redux", "Zustand",
-  "WordPress", "Plugin Dev", "Git", "GitHub", "GitLab", "Odoo ERP",
+  "WordPress", "Plugin Dev", "Elementor", "WooCommerce", "Spectra", "WPForms",
+  "Git", "GitHub", "GitLab", "Odoo ERP",
 ];
 
 const typewriterTexts = [

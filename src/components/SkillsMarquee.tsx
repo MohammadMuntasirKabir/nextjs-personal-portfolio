@@ -2,8 +2,9 @@ const skills = [
   "React", "Next.js", "TypeScript", "Node.js", "Python",
   "Tailwind CSS", "Laravel", "MongoDB", "PostgreSQL", "Firebase",
   "Supabase", "Redux", "Zustand", "Redis", "Docker",
-  "WordPress", "Plugin Dev", "AWS", "Git", "GraphQL", "REST APIs", "Claude Code",
-  "Codex", "n8n", "Zapier", "Figma",
+  "WordPress", "Plugin Dev", "Elementor", "WooCommerce", "Spectra", "WPForms",
+  "AWS", "Git", "GraphQL", "REST APIs", "Claude Code",
+  "Codex", "Lovable", "Kilo Code", "n8n", "Zapier", "Figma",
 ];
 
 export const SkillsMarquee = () => {
