@@ -30,7 +30,7 @@ const techStack = [
   "React", "Next.js", "Tailwind CSS", "Laravel", "Livewire",
   "Vue.js", "PHP", "MySQL", "SQLite", "PostgreSQL",
   "Node.js", "Express", "MongoDB", "Redux", "Zustand",
-  "Git", "GitHub", "GitLab", "Odoo ERP",
+  "WordPress", "Plugin Dev", "Git", "GitHub", "GitLab", "Odoo ERP",
 ];
 
 const typewriterTexts = [

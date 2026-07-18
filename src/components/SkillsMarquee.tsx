@@ -2,7 +2,7 @@ const skills = [
   "React", "Next.js", "TypeScript", "Node.js", "Python",
   "Tailwind CSS", "Laravel", "MongoDB", "PostgreSQL", "Firebase",
   "Supabase", "Redux", "Zustand", "Redis", "Docker",
-  "AWS", "Git", "GraphQL", "REST APIs", "Claude Code",
+  "WordPress", "Plugin Dev", "AWS", "Git", "GraphQL", "REST APIs", "Claude Code",
   "Codex", "n8n", "Zapier", "Figma",
 ];
 
